@@ -34,8 +34,7 @@ app.get("/", (request, response) => {
         return response.status(500).send('Oh no! Error: ' + error);
     });
 });
-
-exports.entries = functions.https.onRequest(app);
-
-
-    
+// exports.entries = functions.https.onRequest(app);
+exports.helloWorld = functions.https.onRequest((request, response) => {
+    response.send("My Data is here!");
+});
